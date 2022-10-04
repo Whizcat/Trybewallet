@@ -1,0 +1,36 @@
+@use '../styles/colors' as colors;
+
+.header {
+  background-color: colors.$white;
+  width: 80%;
+  margin: auto;
+  height: 150px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+
+  .logo {
+    width: 250px;
+    height: 52px;
+  }
+}
+
+.currency {
+  display: flex;
+  align-items: center;
+  color: colors.$blue;
+  p strong {
+    font-weight: 600;
+    margin: 0 10px;
+  }
+}
+
+.user {
+  display: flex;
+  align-items: center;
+  color: colors.$green;
+  p strong {
+    font-weight: 600;
+    margin: 0 10px;
+  }
+}
