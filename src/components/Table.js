@@ -1,11 +1,15 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
+import nextId from 'react-id-generator';
 import { saveNewList, changeToEditAct } from '../redux/actions';
 import styles from './table.module.scss';
+import deleteIcon from '../images/trashcan.png';
+import editIcon from '../images/edit-icon.png';
 
 class Table extends Component {
-  deleteExpense = ({ target: { id } }) => {
+  deleteExpense = ({ target }) => {
+    const { id } = target;
     const { expenses, dispatch } = this.props;
     const newList = expenses.filter((element) => Number(element.id) !== Number(id));
     dispatch(saveNewList(newList));
@@ -49,7 +53,7 @@ class Table extends Component {
                 const { ask, name } = exchangeRates[currency];
                 const convertedValue = Number(ask) * Number(value);
                 return (
-                  <tr key={ id }>
+                  <tr key={ nextId() }>
                     <td>{description}</td>
                     <td>{tag}</td>
                     <td>{method}</td>
@@ -58,14 +62,15 @@ class Table extends Component {
                     <td>{Number(ask).toFixed(2)}</td>
                     <td>{convertedValue.toFixed(2)}</td>
                     <td>BRL</td>
-                    <td>
+                    <td className={ styles.table_buttons }>
                       <button
                         type="button"
                         data-testid="edit-btn"
                         id={ id }
                         onClick={ this.editExpense }
                       >
-                        Editar
+                        <span id={ id }>Editar</span>
+                        <img src={ editIcon } alt="edit button" id={ id } />
                       </button>
                       <button
                         data-testid="delete-btn"
@@ -73,7 +78,8 @@ class Table extends Component {
                         id={ id }
                         onClick={ this.deleteExpense }
                       >
-                        Deletar
+                        <span id={ id }>Deletar</span>
+                        <img src={ deleteIcon } alt="delete" id={ id } />
                       </button>
                     </td>
                   </tr>

@@ -64,11 +64,6 @@ describe('Testa componente Table', () => {
     });
 
     expect(exchangeCurrency).toBeInTheDocument();
-
-    const btns = screen.getByRole('cell', {
-      name: /editar deletar/i,
-    });
-    expect(btns).toBeInTheDocument();
   });
 
   it('É possível excluir uma despesa', () => {

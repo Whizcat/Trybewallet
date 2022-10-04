@@ -14,16 +14,17 @@
 
 .table {
   display: block;
-  margin: auto;
   margin-top: 290px;
-  width: 90%;
+  margin-left: auto;
+  margin-right: auto;
+  width: 85%;
   border-collapse: collapse;
   border-radius: 5px 5px 0 0;
-  overflow: hidden;
   margin-bottom: 30px;
   overflow-y: auto;
   overflow-x: auto;
-  max-height: 284px;
+  max-height: 290px;
+  
   thead th {
     background-color: colors.$table-green;
     color: colors.$white;
@@ -42,9 +43,35 @@
 
   tbody tr:nth-of-type(even) {
     background-color: #f3f3f3;
+    .table_buttons {
+      button {
+        background-color: #f3f3f3;
+      }
+    }
   }
 
   tbody tr:last-of-type {
     border-bottom: 2px solid colors.$table-green;
+  }
+}
+
+.table_buttons {
+  display: flex;
+  height: 75px;
+  align-items: center;
+  button {
+    background-color: colors.$white;
+    height: 30px;
+    margin: 5px;
+    border: none;
+    cursor: pointer;
+  }
+
+  button:first-of-type:hover {
+    color: colors.$green;
+  }
+
+  button:last-of-type:hover {
+    color: red;
   }
 }

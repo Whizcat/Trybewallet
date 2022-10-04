@@ -8,6 +8,7 @@ import {
   setupMadeAct,
 } from '../redux/actions';
 import styles from './walletForm.module.scss';
+import LoadingForm from './LoadingForm';
 
 class WalletForm extends Component {
   state = {
@@ -76,7 +77,7 @@ class WalletForm extends Component {
   setupToEdit = () => {
     const { idToEdit, expenses } = this.props;
     const itemToEdit = expenses.find((item) => Number(item.id) === Number(idToEdit));
-    const { value, description, currency, method, tag } = itemToEdit;
+    const { value = '', description = '', currency, method, tag } = itemToEdit;
     this.setState({
       value,
       description,
@@ -91,7 +92,7 @@ class WalletForm extends Component {
     const { value, description, currency, method, tag } = this.state;
     if (fetching) {
       return (
-        <p data-testid="fetching">Loading...</p>
+        <LoadingForm />
       );
     }
     return (
