@@ -1,0 +1,22 @@
+$white: #FFFFFF;
+$green: #2FC18C;
+$blue: #003BE5;
+$dark-green: rgba(3, 107, 82, 0.3);
+$disabled: #0039e567;
+$text-primary: #3E4854;
+
+@mixin login-border($color: $dark-green) {
+  box-shadow: -4px 9px 13px $color;
+  border-radius: 10px;
+}
+
+@mixin disabled-button() {
+  background-color: $disabled;
+  border: 1px solid rgb(184, 184, 230);
+  border-radius: 5px;
+}
+
+@mixin input-border() {
+  border: 1px solid $blue;
+  border-radius: 5px;
+}
