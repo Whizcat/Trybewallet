@@ -1,0 +1,50 @@
+@use '../styles/colors' as colors;
+
+.table_container {
+  background-color: colors.$blue;
+  position: absolute;
+  width: 90%;
+  min-height: 500px;
+  max-height: 596px;
+  left: 5%;
+  top: 150px;
+  z-index: 1;
+  border-radius: 10px;
+}
+
+.table {
+  display: block;
+  margin: auto;
+  margin-top: 290px;
+  width: 90%;
+  border-collapse: collapse;
+  border-radius: 5px 5px 0 0;
+  overflow: hidden;
+  margin-bottom: 30px;
+  overflow-y: auto;
+  overflow-x: auto;
+  max-height: 284px;
+  thead th {
+    background-color: colors.$table-green;
+    color: colors.$white;
+    text-align: left;
+    font-weight: bold;
+  }
+
+  th, td {
+    padding: 12px 15px;
+  }
+
+  tbody tr {
+    border-bottom: 1px solid #dddddd;
+    background-color: colors.$white;
+  }
+
+  tbody tr:nth-of-type(even) {
+    background-color: #f3f3f3;
+  }
+
+  tbody tr:last-of-type {
+    border-bottom: 2px solid colors.$table-green;
+  }
+}

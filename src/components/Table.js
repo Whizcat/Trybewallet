@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import { saveNewList, changeToEditAct } from '../redux/actions';
+import styles from './table.module.scss';
 
 class Table extends Component {
   deleteExpense = ({ target: { id } }) => {
@@ -18,68 +19,70 @@ class Table extends Component {
   render() {
     const { expenses } = this.props;
     return (
-      <table>
-        <thead>
-          <tr>
-            <th>Descrição</th>
-            <th>Tag</th>
-            <th>Método de pagamento</th>
-            <th>Valor</th>
-            <th>Moeda</th>
-            <th>Câmbio utilizado</th>
-            <th>Valor convertido</th>
-            <th>Moeda de conversão</th>
-            <th>Editar/Excluir</th>
-          </tr>
-        </thead>
-        <tbody>
-          {
-            expenses.map((expense) => {
-              const {
-                description,
-                tag,
-                method,
-                value,
-                currency,
-                id,
-                exchangeRates,
-              } = expense;
-              const { ask, name } = exchangeRates[currency];
-              const convertedValue = Number(ask) * Number(value);
-              return (
-                <tr key={ id }>
-                  <td>{description}</td>
-                  <td>{tag}</td>
-                  <td>{method}</td>
-                  <td>{Number(value).toFixed(2)}</td>
-                  <td>{name}</td>
-                  <td>{Number(ask).toFixed(2)}</td>
-                  <td>{convertedValue.toFixed(2)}</td>
-                  <td>BRL</td>
-                  <td>
-                    <button
-                      type="button"
-                      data-testid="edit-btn"
-                      id={ id }
-                      onClick={ this.editExpense }
-                    >
-                      Editar
-                    </button>
-                    <button
-                      data-testid="delete-btn"
-                      type="button"
-                      id={ id }
-                      onClick={ this.deleteExpense }
-                    >
-                      Deletar
-                    </button>
-                  </td>
-                </tr>
-              );
-            })
-          }
-        </tbody>
-      </table>
+      <div className={ styles.table_container }>
+        <table className={ styles.table }>
+          <thead>
+            <tr>
+              <th>Descrição</th>
+              <th>Tag</th>
+              <th>Método de pagamento</th>
+              <th>Valor</th>
+              <th>Moeda</th>
+              <th>Câmbio utilizado</th>
+              <th>Valor convertido</th>
+              <th>Moeda de conversão</th>
+              <th>Editar/Excluir</th>
+            </tr>
+          </thead>
+          <tbody>
+            {
+              expenses.map((expense) => {
+                const {
+                  description,
+                  tag,
+                  method,
+                  value,
+                  currency,
+                  id,
+                  exchangeRates,
+                } = expense;
+                const { ask, name } = exchangeRates[currency];
+                const convertedValue = Number(ask) * Number(value);
+                return (
+                  <tr key={ id }>
+                    <td>{description}</td>
+                    <td>{tag}</td>
+                    <td>{method}</td>
+                    <td>{Number(value).toFixed(2)}</td>
+                    <td>{name}</td>
+                    <td>{Number(ask).toFixed(2)}</td>
+                    <td>{convertedValue.toFixed(2)}</td>
+                    <td>BRL</td>
+                    <td>
+                      <button
+                        type="button"
+                        data-testid="edit-btn"
+                        id={ id }
+                        onClick={ this.editExpense }
+                      >
+                        Editar
+                      </button>
+                      <button
+                        data-testid="delete-btn"
+                        type="button"
+                        id={ id }
+                        onClick={ this.deleteExpense }
+                      >
+                        Deletar
+                      </button>
+                    </td>
+                  </tr>
+                );
+              })
+            }
+          </tbody>
+        </table>
+      </div>
     );
   }
 }

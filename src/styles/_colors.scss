@@ -4,6 +4,8 @@ $blue: #003BE5;
 $dark-green: rgba(3, 107, 82, 0.3);
 $disabled: #0039e567;
 $text-primary: #3E4854;
+$blue-shadow: rgba(5, 18, 54, 0.075);
+$table-green: #009879;
 
 @mixin login-border($color: $dark-green) {
   box-shadow: -4px 9px 13px $color;
@@ -18,5 +20,5 @@ $text-primary: #3E4854;
 
 @mixin input-border() {
   border: 1px solid $blue;
-  border-radius: 5px;
+  border-radius: 0.25rem;
 }
