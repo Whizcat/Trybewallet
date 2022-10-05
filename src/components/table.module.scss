@@ -29,6 +29,7 @@
   overflow-y: auto;
   overflow-x: auto;
   max-height: 290px;
+  box-shadow: 0 0 7px rgba(46, 46, 46, 0.349);
   
   thead th {
     background-color: colors.$table-green;

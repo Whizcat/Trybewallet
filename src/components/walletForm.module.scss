@@ -7,7 +7,6 @@
 }
 
 .form {
-  background-color: #f0f2f5;
   width: 80%;
   margin: auto;
   height: 134px;
@@ -53,6 +52,14 @@
       }
     }
   }
+}
+
+.add_form {
+  background-color: #f0f2f5;
+}
+
+.edit_form {
+  background-color: colors.$light-green;
 }
 
 .button_cotainer {

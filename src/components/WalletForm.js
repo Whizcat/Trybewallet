@@ -97,7 +97,11 @@ class WalletForm extends Component {
     }
     return (
       <div className={ styles.form_container }>
-        <form className={ styles.form }>
+        <form
+          className={
+            `${styles.form} ${shouldEdit ? styles.edit_form : styles.add_form}`
+          }
+        >
 
           <label htmlFor="value">
             <strong>Valor gasto:</strong>
