@@ -1,4 +1,5 @@
 @use '../styles/colors' as colors;
+@use '../styles/screens' as screen;
 
 .form_container {
   position: relative;
@@ -21,6 +22,35 @@
       font-weight: 700;
       margin-left: 30px;
       margin-right: 4px;
+    }
+  }
+
+  @include screen.large {
+    font-size: smaller;
+    justify-content: flex-start;
+    label {
+      margin: 5px 0;
+      strong {
+        margin-left: 15px;
+      }
+      input {
+        padding: 3px 6px;
+      }
+    }
+  }
+
+  @include screen.small {
+    flex-direction: column;
+    flex-wrap: nowrap;
+    overflow-y: auto;
+    align-items: flex-start;
+    label {
+      display: flex;
+      flex-direction: column;
+      margin: 7px;
+      strong {
+        margin: 3px 0;
+      }
     }
   }
 }
@@ -46,6 +76,9 @@
   font-weight: 700;
   border: 1px solid colors.$green;
   cursor: pointer;
+  @include screen.small {
+    width: 200px;
+  }
 }
 
 .form_button:hover {
