@@ -1,0 +1,47 @@
+@use '../styles/colors' as colors;
+@use '../styles/screens' as screen;
+
+.header {
+  background-color: colors.$white;
+  width: 80%;
+  margin: auto;
+  height: 150px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+
+  .logo {
+    width: 250px;
+    height: 52px;
+    @include screen.small {
+      width: 200px;
+      height: 40px;
+    }
+  }
+
+  @include screen.large {
+    flex-direction: column;
+    font-size: smaller;
+  }
+}
+
+.currency {
+  display: flex;
+  align-items: center;
+  color: colors.$blue;
+  p strong {
+    font-weight: 600;
+    margin: 0 10px;
+  }
+}
+
+.user {
+  display: flex;
+  align-items: center;
+  color: colors.$green;
+  p strong {
+    font-weight: 600;
+    margin: 0 10px;
+  }
+}
+

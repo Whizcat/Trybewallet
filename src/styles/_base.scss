@@ -1,0 +1,63 @@
+* {
+  margin: 0;
+  padding: 0;
+  font-size: 100%;
+  font: inherit;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Epilogue', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  color: $text-primary;
+}
+
+#root {
+  position: relative;
+  background: url('../images/main-bg.png'), $green;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-blend-mode: luminosity;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.input_form {
+  @include input-border;
+  background-color: $white;
+  padding: 0.375rem 0.75rem;
+  line-height: 1.5;
+  font-size: 1rem;
+  outline: $green;
+}
+
+.input_form::placeholder {
+  color: $disabled;
+}
+
+.input_form:focus {
+  outline: 2px solid $blue;
+}
+
+.input_button {
+  width: 100%;
+  @include input-border;
+  background-color: $blue;
+  color: $white;
+  height: 40px;
+  font-weight: 700;
+  text-align: center;
+  box-shadow: 0 0 2px $blue;
+}
+
+.input_button:disabled {
+  @include disabled-button;
+  box-shadow: none;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}

@@ -1,0 +1,28 @@
+@use '../styles/colors' as colors;
+
+.loading {
+  position: relative;
+  z-index: 2;
+}
+
+.loading_form {
+  background-color: #f0f2f5;
+  width: 80%;
+  margin: auto;
+  height: 134px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.loading_button {
+  background-color: colors.$white;
+  height: 100px;
+  width: 80%;
+  margin: auto;
+  border-radius: 0 0 10px 10px;
+  box-shadow: -6px 0 colors.$blue-shadow, 6px 0 colors.$blue-shadow;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

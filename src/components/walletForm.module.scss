@@ -1,0 +1,94 @@
+@use '../styles/colors' as colors;
+@use '../styles/screens' as screen;
+
+.form_container {
+  position: relative;
+  z-index: 2;
+}
+
+.form {
+  width: 80%;
+  margin: auto;
+  height: 134px;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  box-shadow: -6px 0 colors.$blue-shadow, 6px 0 colors.$blue-shadow;
+  label {
+    color: colors.$blue;
+    strong {
+      font-weight: 700;
+      margin-left: 30px;
+      margin-right: 4px;
+    }
+  }
+
+  @include screen.large {
+    font-size: smaller;
+    justify-content: flex-start;
+    label {
+      margin: 5px 0;
+      strong {
+        margin-left: 15px;
+      }
+      input {
+        padding: 3px 6px;
+      }
+    }
+  }
+
+  @include screen.small {
+    flex-direction: column;
+    flex-wrap: nowrap;
+    overflow-y: auto;
+    align-items: flex-start;
+    label {
+      display: flex;
+      flex-direction: column;
+      margin: 7px;
+      strong {
+        margin: 3px 0;
+      }
+    }
+  }
+}
+
+.add_form {
+  background-color: #f0f2f5;
+}
+
+.edit_form {
+  background-color: colors.$light-green;
+}
+
+.button_cotainer {
+  background-color: colors.$white;
+  width: 80%;
+  margin: auto;
+  height: 100px;
+  border-radius: 0 0 10px 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: -6px 0 colors.$blue-shadow, 6px 0 colors.$blue-shadow;
+}
+
+.form_button {
+  background-color: colors.$green;
+  color: colors.$white;
+  width: 330px;
+  height: 40px;
+  border-radius: 5px;
+  font-weight: 700;
+  border: 1px solid colors.$green;
+  cursor: pointer;
+  @include screen.small {
+    width: 200px;
+  }
+}
+
+.form_button:hover {
+  background-color: rgb(48, 170, 125);
+  box-shadow: 0 0 1.5px colors.$green;
+}

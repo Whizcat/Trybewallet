@@ -1,0 +1,89 @@
+@use '../styles/colors' as colors;
+@use '../styles/screens' as screen;
+
+.table_container {
+  background-color: colors.$blue;
+  position: absolute;
+  width: 90%;
+  min-height: 500px;
+  max-height: 596px;
+  left: 5%;
+  top: 150px;
+  z-index: 1;
+  border-radius: 10px;
+  @include screen.large {
+    width: 98%;
+    left: 1%;
+  }
+}
+
+.table {
+  display: block;
+  margin-top: 290px;
+  margin-left: auto;
+  margin-right: auto;
+  width: 70%;
+  border-collapse: collapse;
+  border-radius: 5px 5px 0 0;
+  margin-bottom: 30px;
+  overflow-y: auto;
+  overflow-x: auto;
+  max-height: 290px;
+  box-shadow: 0 0 7px rgba(46, 46, 46, 0.349);
+  
+  thead th {
+    background-color: colors.$table-green;
+    color: colors.$white;
+    text-align: left;
+    font-weight: bold;
+  }
+
+  th, td {
+    padding: 12px 15px;
+  }
+
+  tbody tr {
+    border-bottom: 1px solid #dddddd;
+    background-color: colors.$white;
+  }
+
+  tbody tr:nth-of-type(even) {
+    background-color: #f3f3f3;
+    .table_buttons {
+      button {
+        background-color: #f3f3f3;
+      }
+    }
+  }
+
+  tbody tr:last-of-type {
+    border-bottom: 2px solid colors.$table-green;
+  }
+  @include screen.large {
+    width: 97%;
+  }
+  @include screen.small {
+    font-size: smaller;
+  }
+}
+
+.table_buttons {
+  display: flex;
+  height: 75px;
+  align-items: center;
+  button {
+    background-color: colors.$white;
+    height: 30px;
+    margin: 5px;
+    border: none;
+    cursor: pointer;
+  }
+
+  button:first-of-type:hover {
+    color: colors.$green;
+  }
+
+  button:last-of-type:hover {
+    color: red;
+  }
+}

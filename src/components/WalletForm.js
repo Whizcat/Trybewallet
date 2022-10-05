@@ -7,6 +7,8 @@ import {
   saveNewList,
   setupMadeAct,
 } from '../redux/actions';
+import styles from './walletForm.module.scss';
+import LoadingForm from './LoadingForm';
 
 class WalletForm extends Component {
   state = {
@@ -75,7 +77,7 @@ class WalletForm extends Component {
   setupToEdit = () => {
     const { idToEdit, expenses } = this.props;
     const itemToEdit = expenses.find((item) => Number(item.id) === Number(idToEdit));
-    const { value, description, currency, method, tag } = itemToEdit;
+    const { value = '', description = '', currency, method, tag } = itemToEdit;
     this.setState({
       value,
       description,
@@ -90,96 +92,111 @@ class WalletForm extends Component {
     const { value, description, currency, method, tag } = this.state;
     if (fetching) {
       return (
-        <p data-testid="fetching">Loading...</p>
+        <LoadingForm />
       );
     }
     return (
-      <form>
-        <label htmlFor="value">
-          Valor:
-          <input
-            value={ value }
-            name="value"
-            id="value"
-            type="number"
-            data-testid="value-input"
-            onChange={ this.handleChange }
-          />
-        </label>
-
-        <label htmlFor="description">
-          Descrição:
-          <input
-            value={ description }
-            name="description"
-            type="text"
-            id="description"
-            data-testid="description-input"
-            onChange={ this.handleChange }
-          />
-        </label>
-
-        <label htmlFor="currency">
-          Moeda:
-          <select
-            value={ currency }
-            id="currency"
-            data-testid="currency-input"
-            name="currency"
-            onChange={ this.handleChange }
-          >
-            {
-              currencies.map((element) => (
-                <option
-                  value={ element }
-                  key={ element }
-                >
-                  {element}
-                </option>
-              ))
-            }
-          </select>
-        </label>
-
-        <label htmlFor="method">
-          Método de pagamento:
-          <select
-            value={ method }
-            data-testid="method-input"
-            id="method"
-            name="method"
-            onChange={ this.handleChange }
-          >
-            <option value="Dinheiro">Dinheiro</option>
-            <option value="Cartão de crédito">Cartão de crédito</option>
-            <option value="Cartão de débito">Cartão de débito</option>
-          </select>
-        </label>
-
-        <label htmlFor="tag">
-          Tag:
-          <select
-            value={ tag }
-            id="tag"
-            data-testid="tag-input"
-            name="tag"
-            onChange={ this.handleChange }
-          >
-            <option value="Alimentação">Alimentação</option>
-            <option value="Lazer">Lazer</option>
-            <option value="Trabalho">Trabalho</option>
-            <option value="Transporte">Transporte</option>
-            <option value="Saúde">Saúde</option>
-          </select>
-        </label>
-
-        <button
-          type="button"
-          onClick={ shouldEdit ? this.handleEdit : this.handleExpense }
+      <div className={ styles.form_container }>
+        <form
+          className={
+            `${styles.form} ${shouldEdit ? styles.edit_form : styles.add_form}`
+          }
         >
-          {shouldEdit ? 'Editar despesa' : 'Adicionar despesa'}
-        </button>
-      </form>
+
+          <label htmlFor="value">
+            <strong>Valor gasto:</strong>
+            <input
+              value={ value }
+              name="value"
+              id="value"
+              type="number"
+              data-testid="value-input"
+              onChange={ this.handleChange }
+              className="input_form"
+              placeholder="Ex: 10"
+            />
+          </label>
+
+          <label htmlFor="description">
+            <strong>Descrição:</strong>
+            <input
+              value={ description }
+              name="description"
+              type="text"
+              id="description"
+              data-testid="description-input"
+              onChange={ this.handleChange }
+              className="input_form"
+              placeholder="Ex: Almoço com amigos"
+            />
+          </label>
+
+          <label htmlFor="currency">
+            <strong>Moeda:</strong>
+            <select
+              value={ currency }
+              id="currency"
+              data-testid="currency-input"
+              name="currency"
+              onChange={ this.handleChange }
+              className="input_form"
+            >
+              {
+                currencies.map((element) => (
+                  <option
+                    value={ element }
+                    key={ element }
+                  >
+                    {element}
+                  </option>
+                ))
+              }
+            </select>
+          </label>
+          <label htmlFor="method">
+            <strong>Método de pagamento:</strong>
+            <select
+              value={ method }
+              data-testid="method-input"
+              id="method"
+              name="method"
+              onChange={ this.handleChange }
+              className="input_form"
+            >
+              <option value="Dinheiro">Dinheiro</option>
+              <option value="Cartão de crédito">Cartão de crédito</option>
+              <option value="Cartão de débito">Cartão de débito</option>
+            </select>
+          </label>
+
+          <label htmlFor="tag">
+            <strong>Tag:</strong>
+            <select
+              value={ tag }
+              id="tag"
+              data-testid="tag-input"
+              name="tag"
+              onChange={ this.handleChange }
+              className="input_form"
+            >
+              <option value="Alimentação">Alimentação</option>
+              <option value="Lazer">Lazer</option>
+              <option value="Trabalho">Trabalho</option>
+              <option value="Transporte">Transporte</option>
+              <option value="Saúde">Saúde</option>
+            </select>
+          </label>
+        </form>
+        <div className={ styles.button_cotainer }>
+          <button
+            type="button"
+            onClick={ shouldEdit ? this.handleEdit : this.handleExpense }
+            className={ styles.form_button }
+          >
+            {shouldEdit ? 'Editar despesa' : 'Adicionar despesa'}
+          </button>
+        </div>
+      </div>
     );
   }
 }
