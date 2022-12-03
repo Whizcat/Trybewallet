@@ -1,27 +1,137 @@
-# Trybewallet
-Projeto desenvolvido na Trybe <br/>
-Link para a página do projeto: [Trybewallet](https://imvictorm.github.io/Trybewallet/#/)
+# Trybewallet 💼
 
-Este foi meu primeiro projeto em React utilizando Redux e Sass.<br/>
-A aplicação possui em sua estrutura duas páginas, sendo a primeira uma página de login e a segunda uma carteira digital.<br/>
-Na página de login é preciso inserir um
-email e uma senha, ambos válidos. O email no formato "exemplo@teste.com" e uma senha de no mínimo 6 dígitos. <br/>
-Na página da carteira, existe um formulário onde é possível inserir dados de uma despesa feita, esses dados irão gerar colunas na tabela logo 
-abaixo com algumas informações adicionais, nesta tabela também é possível editar ou deletar gastos. A página possui um saldo total em BRL onde será 
-contabilizado seus gastos. <br />
+## Project Context 💡
 
-Principais habilidades desenvolvidas no projeto:
+That was my first React project using Redux and Sass.
+The application has two pages in its structure, the first being a login page and the second a digital wallet.
+On the login page, you must enter a valid
+email and password. The email has to be in the format `example@test.com`. The password must have a minimum length of 6 digits.
+On the wallet page, there is a form where it is possible to insert data about an expenditure, which will generate columns in the table below with some additional information. In the table, it is also possible to edit or delete expenses. The page has a total balance in BRL which will be increased or decreased based on your expenditure.
 
-- Criar um store Redux em aplicações React
+Page URL: https://imvictorm.github.io/Trybewallet/
 
-- Criar reducers no Redux em aplicações React
+### Acquired Knowledge 📖
 
-- Criar actions no Redux em aplicações React
+In this project, I was able to:
 
-- Criar dispatchers no Redux em aplicações React
+- Create a Redux store;
+- Create reducers;
+- Create actions in Redux;
+- Create dispatchers in Redux;
+- Connect Redux to React components;
+- Create asynchronous actions in the React application that uses Redux.
 
-- Conectar Redux aos componentes React
+Prototype used as reference: https://www.figma.com/file/ibAEAbS7A6EBprCvXJNhbt/%5BProjeto%5D%5BFrontend%5D-TrybeWallet?node-id=0%3A1.
 
-- Criar actions assíncronas na sua aplicação React que faz uso de Redux.
 
-Protótipo utilizado como referência: [aqui](https://www.figma.com/file/ibAEAbS7A6EBprCvXJNhbt/%5BProjeto%5D%5BFrontend%5D-TrybeWallet?node-id=0%3A1).
+## Used Technologies 🧰
+<table>
+    <thead>
+        <tr>
+            <th>HTML5</th>
+            <th>CSS3</th>
+            <th>JavaScript</th>
+            <th>React</th>
+            <th>Redux</th>
+            <th>Jest</th>
+            <th>RTL</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td align="center">
+                <a href="https://www.w3.org/html/" target="_blank" rel="noreferrer"> 
+                    <img 
+                        src="https://raw.githubusercontent.com/devicons/devicon/master/icons/html5/html5-original-wordmark.svg" 
+                        alt="html5" 
+                        width="40" 
+                        height="40"
+                    /> 
+                </a>
+            </td>
+            <td align="center">
+                <a href="https://www.w3schools.com/css/" target="_blank" rel="noreferrer"> 
+                    <img 
+                        src="https://raw.githubusercontent.com/devicons/devicon/master/icons/css3/css3-original-wordmark.svg" 
+                        alt="css3" 
+                        width="40" 
+                        height="40"
+                    />
+                </a>
+            </td>
+            <td align="center">
+                <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript" target="_blank" rel="noreferrer"> 
+                    <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/javascript/javascript-original.svg" 
+                        alt="javascript" 
+                        width="40" 
+                        height="40"
+                    /> 
+                </a>
+            </td>
+            <td align="center">
+                <a href="https://reactjs.org/" target="_blank" rel="noreferrer"> 
+                    <img 
+                        src="https://raw.githubusercontent.com/devicons/devicon/master/icons/react/react-original-wordmark.svg" 
+                        alt="react" 
+                        width="40" 
+                        height="40"
+                    /> 
+                </a>
+            </td>
+            <td align="center">
+                <a href="https://redux.js.org" target="_blank" rel="noreferrer"> 
+                    <img 
+                        src="https://raw.githubusercontent.com/devicons/devicon/master/icons/redux/redux-original.svg" 
+                        alt="redux" 
+                        width="40" 
+                        height="40"
+                    /> 
+                </a>
+            </td>
+             <td align="center">
+                <a href="https://jestjs.io" target="_blank" rel="noreferrer"> 
+                    <img 
+                        src="https://www.vectorlogo.zone/logos/jestjsio/jestjsio-icon.svg" 
+                        alt="jest" 
+                        width="40" 
+                        height="40"
+                     /> 
+                </a>
+            </td>
+            <td align="center">
+                <a href="https://testing-library.com/docs/" target="_blank" rel="noreferrer">
+                    <img 
+                        src="https://testing-library.com/img/octopus-128x128.png"
+                        alt="rtl"
+                        width="40"
+                        height="40"
+                    />
+                </a>
+            </td>
+        </tr>
+    </tbody>
+</table>
+
+## Running the application ⚙️
+
+1. Clone and enter this repository
+```
+git clone git@github.com:ImVictorM/Trybewallet.git && cd Trybewallet
+```
+2. Install the dependencies
+```
+npm install 
+```
+3. Start the project
+```
+npm start
+```
+
+## Testing 🛠️
+Running all tests:
+```
+npm test
+```
+Running a specific test:
+```
+npm test {test_file_name}
