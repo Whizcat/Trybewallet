@@ -30,6 +30,7 @@ Prototype used as reference: https://www.figma.com/file/ibAEAbS7A6EBprCvXJNhbt/%
         <tr>
             <th>HTML5</th>
             <th>CSS3</th>
+            <th>SCSS</th>
             <th>JavaScript</th>
             <th>React</th>
             <th>Redux</th>
@@ -55,6 +56,16 @@ Prototype used as reference: https://www.figma.com/file/ibAEAbS7A6EBprCvXJNhbt/%
                         src="https://raw.githubusercontent.com/devicons/devicon/master/icons/css3/css3-original-wordmark.svg" 
                         alt="css3" 
                         width="40" 
+                        height="40"
+                    />
+                </a>
+            </td>
+            <td align="center">
+                <a href="https://sass-lang.com/">
+                    <img
+                        src="https://cdn.iconscout.com/icon/free/png-256/sass-3521691-2945135.png"
+                        alt="scss"
+                        width="40"
                         height="40"
                     />
                 </a>
